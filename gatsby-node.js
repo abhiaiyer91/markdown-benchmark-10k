@@ -27,7 +27,6 @@ exports.createPages = ({ actions: { createPage } }) => {
       context: {
         id: step.toString(),
       },
-      defer: true
     })
   }
 }
