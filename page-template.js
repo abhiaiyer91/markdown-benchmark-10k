@@ -6,6 +6,7 @@ const MAX_NUM_ROWS = parseInt(process.env.MAX_NUM_ROWS || 1000, 10)
 module.exports = index => `
 ${matter
   .stringify(``, {
+    date: faker.date.between('2015-01-01', new Date()),
     title: faker.lorem.sentence(),
     slug: `/${faker.helpers.slugify(faker.lorem.sentence())}`,
   })
