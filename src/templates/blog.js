@@ -5,7 +5,10 @@ const Index = ({ data, pageContext: { currentPage } }) => {
   const prev = currentPage === 1 ? null : <Link to={`/blog/${currentPage - 1}/`}>Previous</Link>
   const next = <Link to={`/blog/${currentPage + 1}/`}>Next</Link>
   return (
-    <main>
+    <main style={{
+      margin: '0 auto',
+      maxWidth: '80%'
+    }}>
       <h1>Hello World!</h1>
       <ul>
         {
@@ -16,8 +19,10 @@ const Index = ({ data, pageContext: { currentPage } }) => {
           ))
         }
       </ul>
-      {prev}
-      {next}
+      <div style={{ display: 'flex', justifyContent: 'space-between', margin: '0 auto' }}>
+        {prev}
+        {next}
+      </div>
     </main>
   )
 }

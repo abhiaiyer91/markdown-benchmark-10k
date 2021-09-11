@@ -44,16 +44,21 @@ exports.createPages = ({ actions: { createPage } }) => {
   const postsPerPage = 25
   const numPages = pages.length
 
+  let counter = 0
+
   Array.from({ length: numPages }).forEach((_, index) => {
-    createPage({
-      path: index === 0 ? `/blog/` : `/blog/${index + 1}`,
-      component: require.resolve('./src/templates/blog.js'),
-      context: {
-        limit: postsPerPage,
-        skip: index * postsPerPage,
-        numPages,
-        currentPage: index + 1
-      }
-    })
+    counter += postsPerPage
+    if (counter <= numPages) {
+      createPage({
+        path: index === 0 ? `/blog/` : `/blog/${index + 1}`,
+        component: require.resolve('./src/templates/blog.js'),
+        context: {
+          limit: postsPerPage,
+          skip: index * postsPerPage,
+          numPages,
+          currentPage: index + 1
+        }
+      })
+    }
   })
 }
