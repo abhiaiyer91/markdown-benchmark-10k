@@ -9,9 +9,9 @@
   },
   "dependencies": {
     "faker": "^5.5.3",
-    "gatsby": "alpha-9689ff",
-    "gatsby-plugin-gatsby-cloud": "alpha-9689ff",
-    "gatsby-transformer-remark": "alpha-9689ff",
+    "gatsby": "next",
+    "gatsby-plugin-gatsby-cloud": "next",
+    "gatsby-transformer-remark": "next",
     "isomorphic-fetch": "^3.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
